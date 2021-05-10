@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(30.0),
+                          padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                           child: Form(
                             key: _oFormKey,
                             child: Column(
@@ -131,12 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 15,
                         ),
                         WaqtCard(salat: 'الفجر', mawaqit: _mawaqit[0].fajr),
-                        WaqtCard(
-                            salat: 'الشروق', mawaqit: _mawaqit[0].chorok),
+                        WaqtCard(salat: 'الشروق', mawaqit: _mawaqit[0].chorok),
                         WaqtCard(salat: 'الظهر', mawaqit: _mawaqit[0].dhohr),
                         WaqtCard(salat: 'العصر', mawaqit: _mawaqit[0].asr),
-                        WaqtCard(
-                            salat: 'المغرب', mawaqit: _mawaqit[0].maghrib),
+                        WaqtCard(salat: 'المغرب', mawaqit: _mawaqit[0].maghrib),
                         WaqtCard(salat: 'العشاء', mawaqit: _mawaqit[0].icha),
                       ],
                     ),
@@ -176,8 +174,7 @@ class WaqtCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(myWith * 0.36, 10, 0, 0),
+              Center(
                 child: Text(
                   '|',
                   style: TextStyle(

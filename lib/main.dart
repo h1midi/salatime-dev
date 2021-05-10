@@ -4,6 +4,7 @@ import 'package:salatime/mawaqitAPI/mawaqit.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'wilayas.dart';
 import 'package:select_form_field/select_form_field.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -163,15 +164,13 @@ class WaqtCard extends StatelessWidget {
         child: Center(
           child: Stack(
             children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(myWith * 0.04, 16, 0, 0),
-                child: Text(
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 40),
+                child: AutoSizeText(
                   _mawaqit,
-                  style: GoogleFonts.anton(
-                    textStyle: TextStyle(
-                      fontSize: 25,
-                    ),
-                  ),
+                  minFontSize: 17,
+                  style: GoogleFonts.anton(),
                 ),
               ),
               Center(
@@ -183,13 +182,14 @@ class WaqtCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(myWith * 0.6, 20, 20, 20),
-                child: Text(
+              Container(
+                alignment: Alignment.centerRight,
+                padding: EdgeInsets.only(right: 40),
+                child: AutoSizeText(
                   salat,
+                  minFontSize: 17,
                   style: GoogleFonts.mada(
-                    textStyle:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    textStyle: TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ),
               )

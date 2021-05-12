@@ -169,7 +169,7 @@ class WaqtCard extends StatelessWidget {
                 padding: EdgeInsets.only(left: 40),
                 child: AutoSizeText(
                   _mawaqit,
-                  minFontSize: 17,
+                  minFontSize: 18,
                   style: GoogleFonts.anton(),
                 ),
               ),

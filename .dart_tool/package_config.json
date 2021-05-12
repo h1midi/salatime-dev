@@ -27,9 +27,9 @@
     },
     {
       "name": "auto_size_text",
-      "rootUri": "file:///home/hamidi/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-3.0.0-nullsafety.0",
+      "rootUri": "file:///home/hamidi/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/auto_size_text-2.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.0"
     },
     {
       "name": "boolean_selector",
@@ -500,7 +500,7 @@
       "languageVersion": "2.11"
     }
   ],
-  "generated": "2021-05-10T19:34:26.757541Z",
+  "generated": "2021-05-12T16:53:37.661965Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }

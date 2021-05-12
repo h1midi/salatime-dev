@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   GlobalKey<FormState> _oFormKey = GlobalKey<FormState>();
   TextEditingController _controller;
-  String _valueChanged = '20';
+  String _valueChanged = '13';
   String _valueToValidate = '';
   String _valueSaved = '';
 
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _loading = false;
       });
     });
-    _controller = TextEditingController(text: '01');
+    _controller = TextEditingController(text: '13');
   }
 
   @override

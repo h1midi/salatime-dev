@@ -44,18 +44,18 @@ var myWith;
 var myHeight;
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Mawaqit> _mawaqit;
-  bool _loading;
+  late List<Mawaqit> _mawaqit;
+  late bool _loading;
 
   GlobalKey<FormState> _oFormKey = GlobalKey<FormState>();
-  TextEditingController _controller;
+  late TextEditingController _controller;
   String _valueChanged = '13';
   String _valueToValidate = '';
   String _valueSaved = '';
 
   bool _connectionStatus = true;
   final Connectivity _connectivity = Connectivity();
-  StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
 
   @override
   void initState() {
@@ -201,11 +201,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class WaqtCard extends StatelessWidget {
   const WaqtCard({
-    Key key,
-    @required this.salat,
-    @required String mawaqit,
+    required this.salat,
+    required String mawaqit,
   })  : _mawaqit = mawaqit,
-        super(key: key);
+        super();
   final String salat;
   final String _mawaqit;
 

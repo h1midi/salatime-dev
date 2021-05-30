@@ -136,7 +136,26 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: Center(
             child: _connectionStatus
-                ? CircularProgressIndicator()
+                ? Center(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 115,
+                        ),
+                        CircularProgressIndicator(),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 125.0),
+                          child: Text(
+                            'No Internet, check you network settings.',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
                 : _loading
                     ? SpinKitRing(
                         color: Colors.amber,

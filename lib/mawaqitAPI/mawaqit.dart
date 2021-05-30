@@ -12,14 +12,14 @@ String mawaqitToJson(List<Mawaqit> data) =>
 
 class Mawaqit {
   Mawaqit({
-    this.date,
-    this.wilaya,
-    this.fajr,
-    this.chorok,
-    this.dhohr,
-    this.asr,
-    this.maghrib,
-    this.icha,
+    required this.date,
+    required this.wilaya,
+    required this.fajr,
+    required this.chorok,
+    required this.dhohr,
+    required this.asr,
+    required this.maghrib,
+    required this.icha,
   });
 
   DateTime date;
@@ -57,9 +57,9 @@ class Mawaqit {
 
 class Wilaya {
   Wilaya({
-    this.code,
-    this.arabicName,
-    this.englishName,
+    required this.code,
+    required this.arabicName,
+    required this.englishName,
   });
 
   String code;

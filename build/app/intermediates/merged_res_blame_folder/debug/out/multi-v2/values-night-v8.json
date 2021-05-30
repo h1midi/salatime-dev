@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/hamidi/Documents/vs-github/salatime/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/hamidi/Documents/GitHub/salatime/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/hamidi/Documents/vs-github/salatime/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/hamidi/Documents/GitHub/salatime/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -65,12 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
     _loading = true;
     _connectionStatus = true;
-    Services.getMawaqit(_valueChanged).then((mawaqit) {
-      setState(() {
-        _mawaqit = mawaqit;
-        _loading = false;
-      });
-    });
+
     _controller = TextEditingController(text: '13');
   }
 
@@ -98,7 +93,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     if (result == ConnectivityResult.wifi ||
         result == ConnectivityResult.mobile)
-      setState(() => _connectionStatus = false);
+      setState(() {
+        _connectionStatus = false;
+        Services.getMawaqit(_valueChanged).then((mawaqit) {
+          setState(() {
+            _mawaqit = mawaqit;
+            _loading = false;
+          });
+        });
+      });
   }
 
   @override
@@ -137,31 +140,25 @@ class _MyHomePageState extends State<MyHomePage> {
           body: Center(
             child: _connectionStatus
                 ? Center(
-                    child: Column(
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
                       children: [
-                        SizedBox(
-                          height: 115,
-                        ),
-                        CircularProgressIndicator(),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 125.0),
-                          child: Text(
-                            'No Internet, check you network settings.',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                            ),
+                        Text(
+                          'No Internet, check you network settings.',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
                           ),
-                        )
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 100.0),
+                          child: CircularProgressIndicator(),
+                        ),
                       ],
                     ),
                   )
                 : _loading
-                    ? SpinKitRing(
-                        color: Colors.amber,
-                        size: 40.0,
-                        lineWidth: 4,
-                      )
+                    ? CircularProgressIndicator()
                     : SingleChildScrollView(
                         child: Column(
                           children: [

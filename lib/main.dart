@@ -4,13 +4,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:select_form_field/select_form_field.dart';
-
 import 'package:salatime/mawaqitAPI/mawaqit.dart';
 import 'package:salatime/mawaqitAPI/services.dart';
-
 import 'wilayas.dart';
 
 void main() {
@@ -124,13 +120,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       'Sala',
-                      style: GoogleFonts.satisfy(fontSize: 50),
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontFamily: 'Satisfy',
+                      ),
                     ),
                     Text(
                       'Time',
-                      style: GoogleFonts.satisfy(
-                        textStyle: TextStyle(color: Colors.amber, fontSize: 50),
-                      ),
+                      style: TextStyle(
+                          color: Colors.amber,
+                          fontSize: 50,
+                          fontFamily: 'Satisfy'),
                     ),
                   ],
                 ),
@@ -239,7 +239,7 @@ class WaqtCard extends StatelessWidget {
                 child: AutoSizeText(
                   _mawaqit,
                   minFontSize: 18,
-                  style: GoogleFonts.anton(),
+                  style: TextStyle(fontFamily: 'Anton'),
                 ),
               ),
               Center(
@@ -257,8 +257,9 @@ class WaqtCard extends StatelessWidget {
                 child: AutoSizeText(
                   salat,
                   minFontSize: 17,
-                  style: GoogleFonts.mada(
-                    textStyle: TextStyle(fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Mada',
                   ),
                 ),
               )

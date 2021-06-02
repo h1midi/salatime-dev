@@ -15,8 +15,6 @@ dependencies:
   connectivity: ^3.0.6
   cupertino_icons: ^1.0.2
   dropdown_formfield: ^0.1.3
-  flutter_spinkit: ^4.1.2
-  google_fonts: ^2.0.0
   http: ^0.13.3
   json_annotation: ^4.0.1
   select_form_field: ^2.0.0
@@ -28,11 +26,14 @@ dev_dependencies:
   json_serializable: ^4.1.1
 
 flutter:
-  # fonts:
-  #   - family: Anton
-  #     fonts:
-  #       - asset: fonts/Anton-Regular.ttf
-  #   - family: ArefRuqaa
-  #     fonts:
-  #       - asset: fonts/ArefRuqaa-Regular.ttf
+  fonts:
+    - family: Anton
+      fonts:
+        - asset: fonts/Anton-Regular.ttf
+    - family: Mada
+      fonts:
+        - asset: fonts/Mada-Regular.ttf
+    - family: Satisfy
+      fonts:
+        - asset: fonts/Satisfy-Regular.ttf
   uses-material-design: true

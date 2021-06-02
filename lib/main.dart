@@ -5,8 +5,12 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:select_form_field/select_form_field.dart';
+import 'package:timer_count_down/timer_count_down.dart';
+import 'package:timer_count_down/timer_controller.dart';
+
 import 'package:salatime/mawaqitAPI/mawaqit.dart';
 import 'package:salatime/mawaqitAPI/services.dart';
+
 import 'wilayas.dart';
 
 void main() {
@@ -52,6 +56,20 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _connectionStatus = true;
   final Connectivity _connectivity = Connectivity();
   StreamSubscription<ConnectivityResult> _connectivitySubscription;
+
+  String timer(String date) {
+    DateTime parseDt = DateTime.parse(DateTime.now().year.toString() +
+        '-' +
+        '0' +
+        DateTime.now().month.toString() +
+        '-' +
+        '0' +
+        DateTime.now().day.toString() +
+        ' ' +
+        date);
+    print(parseDt);
+    return DateTime.now().difference(parseDt).inSeconds.toString();
+  }
 
   @override
   void initState() {
@@ -197,16 +215,30 @@ class _MyHomePageState extends State<MyHomePage> {
                             SizedBox(
                               height: 15,
                             ),
-                            WaqtCard(salat: 'الفجر', mawaqit: _mawaqit[0].fajr),
                             WaqtCard(
-                                salat: 'الشروق', mawaqit: _mawaqit[0].chorok),
+                                salat: 'الفجر',
+                                timer: timer(_mawaqit[0].fajr),
+                                mawaqit: _mawaqit[0].fajr),
                             WaqtCard(
-                                salat: 'الظهر', mawaqit: _mawaqit[0].dhohr),
-                            WaqtCard(salat: 'العصر', mawaqit: _mawaqit[0].asr),
+                                salat: 'الشروق',
+                                timer: timer(_mawaqit[0].chorok),
+                                mawaqit: _mawaqit[0].chorok),
                             WaqtCard(
-                                salat: 'المغرب', mawaqit: _mawaqit[0].maghrib),
+                                salat: 'الظهر',
+                                timer: timer(_mawaqit[0].dhohr),
+                                mawaqit: _mawaqit[0].dhohr),
                             WaqtCard(
-                                salat: 'العشاء', mawaqit: _mawaqit[0].icha),
+                                salat: 'العصر',
+                                timer: timer(_mawaqit[0].asr),
+                                mawaqit: _mawaqit[0].asr),
+                            WaqtCard(
+                                salat: 'المغرب',
+                                timer: timer(_mawaqit[0].maghrib),
+                                mawaqit: _mawaqit[0].maghrib),
+                            WaqtCard(
+                                salat: 'العشاء',
+                                timer: timer(_mawaqit[0].icha),
+                                mawaqit: _mawaqit[0].icha),
                           ],
                         ),
                       ),
@@ -216,14 +248,16 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class WaqtCard extends StatelessWidget {
-  const WaqtCard({
+  WaqtCard({
     this.salat,
+    this.timer,
     String mawaqit,
   })  : _mawaqit = mawaqit,
         super();
   final String salat;
   final String _mawaqit;
-
+  final String timer;
+  final CountdownController _controller = new CountdownController();
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -240,6 +274,17 @@ class WaqtCard extends StatelessWidget {
                   _mawaqit,
                   minFontSize: 18,
                   style: TextStyle(fontFamily: 'Anton'),
+                ),
+              ),
+              //Text(timer),
+              Countdown(
+                controller: _controller,
+                seconds: int.parse(timer),
+                build: (_, double time) => Text(
+                  time.toString(),
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
               ),
               Center(

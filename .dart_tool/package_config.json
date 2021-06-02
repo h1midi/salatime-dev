@@ -344,6 +344,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "quiver",
+      "rootUri": "file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "select_form_field",
       "rootUri": "file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/select_form_field-2.0.0",
       "packageUri": "lib/",
@@ -416,6 +422,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "timer_count_down",
+      "rootUri": "file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/timer_count_down-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "timing",
       "rootUri": "file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/timing-1.0.0",
       "packageUri": "lib/",
@@ -458,7 +470,7 @@
       "languageVersion": "2.11"
     }
   ],
-  "generated": "2021-06-02T19:17:49.323157Z",
+  "generated": "2021-06-02T20:50:01.884778Z",
   "generator": "pub",
   "generatorVersion": "2.13.1"
 }

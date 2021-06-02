@@ -218,6 +218,10 @@ pubspec_parse
 2.12
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.0.0/
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.0.0/lib/
+quiver
+2.12
+file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.0.1/
+file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.0.1/lib/
 select_form_field
 2.12
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/select_form_field-2.0.0/
@@ -262,6 +266,10 @@ test_api
 2.12
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0/
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0/lib/
+timer_count_down
+2.12
+file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/timer_count_down-2.0.1/
+file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/timer_count_down-2.0.1/lib/
 timing
 2.12
 file:///home/hamidi/development/flutter/.pub-cache/hosted/pub.dartlang.org/timing-1.0.0/

@@ -18,6 +18,8 @@ dependencies:
   http: ^0.13.3
   json_annotation: ^4.0.1
   select_form_field: ^2.0.0
+  quiver: ^3.0.1
+  timer_count_down: ^2.0.1
 
 dev_dependencies:
   flutter_test:

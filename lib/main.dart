@@ -46,6 +46,7 @@ var myHeight;
 class _MyHomePageState extends State<MyHomePage> {
   List<Mawaqit> _mawaqit;
   bool _loading;
+  List<String> timers;
 
   GlobalKey<FormState> _oFormKey = GlobalKey<FormState>();
   TextEditingController _controller;
@@ -113,6 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             _mawaqit = mawaqit;
             _loading = false;
+            timers = [
+              timer(_mawaqit[0].fajr),
+              timer(_mawaqit[0].chorok),
+              timer(_mawaqit[0].dhohr),
+              timer(_mawaqit[0].asr),
+              timer(_mawaqit[0].maghrib),
+              timer(_mawaqit[0].icha)
+            ];
           });
         });
       });
@@ -197,6 +206,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                           setState(() {
                                             _mawaqit = mawaqit;
                                             _loading = false;
+                                            timers = [
+                                              timer(_mawaqit[0].fajr),
+                                              timer(_mawaqit[0].chorok),
+                                              timer(_mawaqit[0].dhohr),
+                                              timer(_mawaqit[0].asr),
+                                              timer(_mawaqit[0].maghrib),
+                                              timer(_mawaqit[0].icha)
+                                            ];
+                                            _ccontroller.restart();
                                           });
                                         });
                                       }),
@@ -217,27 +235,27 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             WaqtCard(
                                 salat: 'الفجر',
-                                timer: timer(_mawaqit[0].fajr),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].fajr),
                             WaqtCard(
                                 salat: 'الشروق',
-                                timer: timer(_mawaqit[0].chorok),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].chorok),
                             WaqtCard(
                                 salat: 'الظهر',
-                                timer: timer(_mawaqit[0].dhohr),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].dhohr),
                             WaqtCard(
                                 salat: 'العصر',
-                                timer: timer(_mawaqit[0].asr),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].asr),
                             WaqtCard(
                                 salat: 'المغرب',
-                                timer: timer(_mawaqit[0].maghrib),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].maghrib),
                             WaqtCard(
                                 salat: 'العشاء',
-                                timer: timer(_mawaqit[0].icha),
+                                timer: timers[indx],
                                 mawaqit: _mawaqit[0].icha),
                           ],
                         ),
@@ -247,17 +265,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+final CountdownController _ccontroller = new CountdownController();
+int indx = 0;
+
 class WaqtCard extends StatelessWidget {
   WaqtCard({
     this.salat,
     this.timer,
     String mawaqit,
   })  : _mawaqit = mawaqit,
+        timerInt = int.parse(timer) * -1,
         super();
   final String salat;
   final String _mawaqit;
   final String timer;
-  final CountdownController _controller = new CountdownController();
+  final int timerInt;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -277,25 +299,40 @@ class WaqtCard extends StatelessWidget {
                 ),
               ),
               //Text(timer),
-              Countdown(
-                controller: _controller,
-                seconds: int.parse(timer),
-                build: (_, double time) => Text(
-                  time.toString(),
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-              ),
               Center(
-                child: Text(
-                  '|',
-                  style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 40,
-                  ),
+                child: Countdown(
+                  controller: _ccontroller,
+                  seconds: timerInt,
+                  build: (_, double time) => time > 0
+                      ? {
+                          indx < 5 ? indx++ : indx = 0,
+                          Text(
+                            time.toInt().toString(),
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        }
+                      : Container(
+                          child: Text(
+                            time.toInt().toString(),
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                  onFinished: () => indx < 5 ? indx++ : indx = 0,
                 ),
               ),
+              // Center(
+              //   child: Text(
+              //     DateTime.now().toString(),
+              //     style: TextStyle(
+              //       color: Colors.amber,
+              //       fontSize: 10,
+              //     ),
+              //   ),
+              // ),
               Container(
                 alignment: Alignment.centerRight,
                 padding: EdgeInsets.only(right: 40),

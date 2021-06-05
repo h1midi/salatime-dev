@@ -299,40 +299,40 @@ class WaqtCard extends StatelessWidget {
                 ),
               ),
               //Text(timer),
-              Center(
-                child: Countdown(
-                  controller: _ccontroller,
-                  seconds: timerInt,
-                  build: (_, double time) => time > 0
-                      ? {
-                          indx < 5 ? indx++ : indx = 0,
-                          Text(
-                            time.toInt().toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        }
-                      : Container(
-                          child: Text(
-                            time.toInt().toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                  onFinished: () => indx < 5 ? indx++ : indx = 0,
-                ),
-              ),
               // Center(
-              //   child: Text(
-              //     DateTime.now().toString(),
-              //     style: TextStyle(
-              //       color: Colors.amber,
-              //       fontSize: 10,
-              //     ),
+              //   child: Countdown(
+              //     controller: _ccontroller,
+              //     seconds: timerInt,
+              //     build: (_, double time) => time > 0
+              //         ? {
+              //             indx < 5 ? indx++ : indx = 0,
+              //             Text(
+              //               time.toInt().toString(),
+              //               style: TextStyle(
+              //                 fontSize: 16,
+              //               ),
+              //             )
+              //           }
+              //         : Container(
+              //             child: Text(
+              //               time.toInt().toString(),
+              //               style: TextStyle(
+              //                 fontSize: 16,
+              //               ),
+              //             ),
+              //           ),
+              //     onFinished: () => indx < 5 ? indx++ : indx = 0,
               //   ),
               // ),
+              Center(
+                child: Text(
+                  '|',
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontSize: 40,
+                  ),
+                ),
+              ),
               Container(
                 alignment: Alignment.centerRight,
                 padding: EdgeInsets.only(right: 40),

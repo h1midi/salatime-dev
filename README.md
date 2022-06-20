@@ -1,16 +1,26 @@
-# salatime
+# SalaTime
 
-A new Flutter project.
+ تطبيق لمعرفة مواقيت الصلات في كل ولايات الجزائر
 
-## Getting Started
+## Badges
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)    [![Platforms](https://img.shields.io/badge/Platforms-Android%20WEB-blue)](https://hammiddi.me/)
+## License
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[MIT](https://choosealicense.com/licenses/mit/)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshot
+
+<img src="https://i.postimg.cc/Sx0X6thn/img1.png" width="200">      <img src="https://i.postimg.cc/cHKgMqr8/img2.png" width="200">       <img src="https://i.postimg.cc/jdT2CnQf/img3.png" width="200">       <img src="https://i.postimg.cc/d35129GD/img4.png" width="200">
+
+  
+## Tech Stack
+
+**Client:** [Flutter](https://github.com/flutter/flutter)
+
+**Server:** [salat-dz](https://github.com/mohammedi-haroune/salat-dz)
+  
+## Installation 
+
+Install SalaTime from [Uptodown](https://salatime.hammiddi.me/)

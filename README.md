@@ -23,4 +23,4 @@
   
 ## Installation 
 
-Install SalaTime from [Uptodown](https://salatime.hammiddi.me/)
+Install SalaTime from [![Get it on Google Play](https://insticket.netlify.app/image/l3/google-play.png)](https://play.google.com/store/apps/details?id=com.hammiddi.myblog)
